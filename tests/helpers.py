@@ -57,3 +57,25 @@ class NoSleepTime:
 
     def sleep(self, seconds):  # noqa: D102 - sengaja no-op
         pass
+
+
+class RekamLog:
+    """
+    Pengganti `ui.log` yang merekam pesan tanpa mencetak apa pun.
+
+    Dipakai test yang peduli pada *isi pesan* log (mis. memastikan sebuah
+    kondisi dilaporkan sebagai info, bukan sebagai peringatan).
+    """
+
+    def __init__(self):
+        self.pesan = []
+
+    def __call__(self, msg, level="INFO"):
+        self.pesan.append((level, msg))
+
+    def teks(self):
+        return "\n".join(f"{level} {msg}" for level, msg in self.pesan)
+
+    def level_dari(self, potongan):
+        """Daftar level untuk pesan yang memuat `potongan`."""
+        return [level for level, msg in self.pesan if potongan in msg]

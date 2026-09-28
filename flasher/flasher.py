@@ -200,8 +200,8 @@ def _build_bin_map(args, dirs):
                     continue
             except Exception:
                 continue
-            log(f"PERHATIAN: firmware {fams[i]} dan {fams[j]} file-nya IDENTIK - "
-                f"salah satu kemungkinan hasil copy/rename yang salah.", "WARN")
+            log(f"info: firmware {fams[i]} dan {fams[j]} isinya SAMA (satu paket, dua nama) - "
+                f"aman, paket ini tetap dipakai untuk semua modem.", "INFO")
     return bin_map
 
 

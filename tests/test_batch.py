@@ -3,10 +3,12 @@ Test mode stasiun otomatis (steps/batch.py) - dengan HTTP/telnet palsu.
 
 Tidak ada modem, tidak ada jaringan: semua fungsi I/O di-monkeypatch.
 """
+import argparse
+
 import pytest
 
 import steps.batch as batch
-from helpers import FakeClock, NoSleepTime
+from helpers import FakeClock, NoSleepTime, RekamLog
 
 DEVINFO = {
     "SerialNumber": "485754439A1892AF",
@@ -343,6 +345,32 @@ def test_process_one_pakai_bin_map_sesuai_versi_modem(monkeypatch, tmp_path):
 
     assert res["status"] == "ok"
     assert used["bin"] == "R020.bin"
+
+
+def test_bin_map_firmware_kembar_diinfokan_bukan_diperingatkan(monkeypatch, tmp_path):
+    """
+    Di lapangan `R020.bin` sering cuma salinan `2 - R022.bin` (1 paket, 2 nama).
+    Dulu tool mencetak 'PERHATIAN ... IDENTIK' yang bikin panik. Sekarang harus
+    jadi info netral - tapi tetap diberi tahu.
+    """
+    import flasher as cli
+    from steps import ui
+
+    isi = b"firmware-sama-persis"
+    (tmp_path / "R020.bin").write_bytes(isi)
+    (tmp_path / "2 - R022.bin").write_bytes(isi)
+
+    rekam = RekamLog()
+    monkeypatch.setattr(ui, "log", rekam)
+
+    hasil = cli._build_bin_map(argparse.Namespace(bin_r020=None, bin_r022=None),
+                               (str(tmp_path),))
+
+    assert set(hasil) == {"R020", "R022"}          # pemetaan tetap jalan
+    teks = rekam.teks()
+    assert "PERHATIAN" not in teks                 # tidak lagi alarm
+    assert rekam.level_dari("isinya SAMA") == ["INFO"]
+    assert "2 - R022.bin" in teks
 
 
 def test_process_one_gagal_kalau_modem_tidak_kembali_setelah_equipmode(monkeypatch, tmp_path):
