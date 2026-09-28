@@ -6,7 +6,7 @@ Port dari `5v5 - tahun 2024 R022` (Windows .exe/.bat) ke Python stdlib, jalan di
 
 > **Isi folder ini:** `flasher.py` + `steps/` (kode), `defaultconfig.xml` (config restore
 > yang dipakai `upload-xml`/`full`/`batch`), `legacy/` (skrip Windows & catatan alur asli
-> sebagai referensi), dan `BATCH - Station Mode.bat` (dobel-klik di Windows).
+> sebagai referensi), dan `flash.bat` (dobel-klik di Windows).
 > Firmware `.bin` ditaruh sendiri di folder ini — tidak disertakan di repo.
 
 ## Apa yang sudah diporting (semua sudah teruji di ONT nyata)

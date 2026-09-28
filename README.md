@@ -45,7 +45,7 @@ python flasher.py detect
 python flasher.py batch
 ```
 
-Atau cukup **dobel-klik `flasher\BATCH - Station Mode.bat`**.
+Atau cukup **dobel-klik `flasher\flash.bat`**.
 
 > **Firmware `2 - R022.bin` tidak disertakan** di repo ini (lihat *Keamanan & Legal*).
 > Sediakan file firmware secara terpisah, lalu taruh di folder `flasher/`.
@@ -211,7 +211,7 @@ dicatat di `backup/batch_log.csv`.
 │   │   ├── AIO.bat, 3 - EquipmodeR022.bat, 4 - Epon Mode.bat, step *.bat
 │   │   ├── step.md, CommandTelnetUpstreamPort.txt, CaraBalikinModemKeResetGPON.txt
 │   ├── defaultconfig.xml      # config restore default (dipakai `upload-xml`/`full`/`batch`)
-│   ├── BATCH - Station Mode.bat   # dobel-klik untuk mode stasiun (Windows)
+│   ├── flash.bat              # dobel-klik untuk mode stasiun (Windows)
 │   └── README.md              # DOKUMENTASI TEKNIS LENGKAP
 ├── tests/                     # unit test - tanpa modem, tanpa jaringan
 ├── pyproject.toml             # packaging + console script `5v5-flasher`

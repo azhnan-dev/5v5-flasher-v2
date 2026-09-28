@@ -82,7 +82,7 @@ echo.
 echo       %PY% flasher\flasher.py detect       - cek modem terdeteksi
 echo       %PY% flasher\flasher.py batch        - MODE STASIUN otomatis
 echo.
-echo   Atau dobel-klik: flasher\BATCH - Station Mode.bat
+echo   Atau dobel-klik: flasher\flash.bat
 echo   Firmware .bin ditaruh di folder flasher\
 echo   Detail lengkap: flasher\README.md
 echo.
