@@ -1,0 +1,10 @@
+# Normalisasi line-ending: simpan LF di repo supaya rapi saat di-clone di Linux/Termux.
+* text=auto
+*.py  text eol=lf
+*.md  text eol=lf
+*.txt text eol=lf
+*.sh  text eol=lf
+*.bat text eol=crlf
+
+# Config restore: jangan diubah byte-nya (dikirim apa adanya ke modem).
+flasher/defaultconfig.xml -text

@@ -1,0 +1,13 @@
+Telnet 192.168.100.1
+root/admin
+su
+
+Change Upstream Port:
+=====================
+1.Optical(GPON) = set upport mode 1 upportid 0x102001
+2.Optical(EPON) = set upport mode 2 upportid 0x102001
+3.Optical(XPON) = set upport mode 4 upportid 0x102001
+4.LAN 1 = set upport mode 3 upportid 0x00000001
+5.LAN 2 = set upport mode 3 upportid 0x00000002
+6.LAN 3 = set upport mode 3 upportid 0x00000003
+7.LAN 4 = set upport mode 3 upportid 0x00000004

@@ -1,0 +1,3 @@
+# Dependensi untuk development / menjalankan test.
+# Runtime program sendiri tidak butuh paket eksternal apa pun.
+pytest>=7

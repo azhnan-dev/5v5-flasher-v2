@@ -1,0 +1,33 @@
+CARA BALIKIN MODEM kena RESET GPON
+[Modem sdh diflash: 3-Shell-R019-R022(2023).bin]
+================================================
+File yg digunakan:
+2Config-DEFAULT.xml
+4-GPON-to-EPON.bat
+4-GPON-to-XPON.bat
+(Download link ada dideskripsi : https://youtu.be/OFHDm6kcYkE?si=mG_5yW-ud2bjidfN)
+
+### Langkah 1 ###
+Login Web :
+192.168.100.1 (Support/theworldinyourhand)/(telecomadmin/admintelecom)
+192.168.18.1 (Epadmin/adminEp)
+
+### Langkah 2 ###
+upload file 2config-DEFAULT.xml
+menu Advanced >> Maintenance Diagno.. >> Configuration File.. 
+>> Browse ke file 2Config-DEFAULT.xml >>> klik UPDATE
+
+Modem automatic reboot => IP Modem ganti : 192.168.100.1
+Login Web :
+192.168.100.1 (telecomadmin/admintelecom)
+
+### Langkah 3 ###
+Jalankan(Klik2X) file .bat:
+4-GPON-to-XPON.bat => rubah ke XPON (GPON/EPON)
+4-GPON-to-EPON.bat => rubah ke EPON 
+
+### REBOOT - SELESAI ###
+
+
+
+ 

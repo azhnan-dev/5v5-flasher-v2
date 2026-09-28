@@ -1,0 +1,9 @@
+# 5v5-flasher TIDAK butuh dependensi runtime apa pun.
+# Semuanya memakai Python standard library (urllib, http.client, socket, ...).
+#
+# File ini sengaja hanya berisi komentar, supaya perintah kebiasaan:
+#     pip install -r requirements.txt
+# tetap berhasil (tidak memasang apa-apa).
+#
+# Untuk menjalankan unit test, pakai:
+#     pip install -r requirements-dev.txt

@@ -1,0 +1,53 @@
+@Echo off
+echo set sh=WScript.CreateObject("WScript.Shell") >tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "open 192.168.18.1{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "root{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "admin{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "su{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "shell{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "EquipMode.sh on{ENTER}" >>tmp.vbs
+echo WScript.Sleep 3000 >>tmp.vbs
+echo sh.SendKeys "exit{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "quit{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "quit{ENTER}" >>tmp.vbs
+echo WScript.Sleep 3000 >>tmp.vbs
+echo sh.SendKeys "a{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+start telnet
+cscript //nologo tmp.vbs
+del tmp.vbs
+echo set sh=WScript.CreateObject("WScript.Shell") >tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "open 192.168.18.1{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "root{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "admin{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "su{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "shell{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "sudo restorehwmode.sh{ENTER}" >>tmp.vbs
+echo WScript.Sleep 4000 >>tmp.vbs
+echo sh.SendKeys "exit{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+echo sh.SendKeys "reset{ENTER}" >>tmp.vbs
+echo WScript.Sleep 10000 >>tmp.vbs
+echo sh.SendKeys "a{ENTER}" >>tmp.vbs
+echo WScript.Sleep 1000 >>tmp.vbs
+start telnet
+cscript //nologo tmp.vbs
+del tmp.vbs
+
+
+
+##### MOHON FILE INI JANGAN DIJUAL #####

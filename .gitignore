@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------------
+# JANGAN publikasikan file milik vendor / yang berisi data sensitif.
+# Firmware & backup modem memuat data proprietary Huawei (hak cipta) dan
+# konfigurasi jaringan. Jadi semua itu TIDAK masuk repo — taruh sendiri
+# (privat) kalau mau dipakai.
+# ---------------------------------------------------------------------------
+*.bin
+*.exe
+*.xml
+
+# Pengecualian: config restore default untuk versi umum IKUT dipublikasikan.
+!flasher/defaultconfig.xml
+
+backup/
+2 - R022.bin
+TOOLS FLASHER.exe
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log lokal
+*.log
